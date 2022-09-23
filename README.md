@@ -20,7 +20,7 @@ Dart SDK Version 2.17.0 or greater.
 Flutter SDK Version 3.0.0 or greater.
 
 ## Figma Design
-https://www.figma.com/file/4DOiNZZRRW94zAiQ9LMW3h/SG-grocery?node-id=0%3A1
+https://www.figma.com/file/MFmvrF4Lkjw0rCLzPmH1yk/Grocery
 
 ### Webflow CMS Collections
 
