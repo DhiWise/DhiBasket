@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "1015572188036",
+    "project_id": "farm-dev-3119f",
+    "storage_bucket": "farm-dev-3119f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015572188036:android:a8eb760843f5c47a76ebd1",
+        "android_client_info": {
+          "package_name": "com.app.firekart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015572188036-00ck13nt6qchjahrjje1n791dfji1onl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLfq0AQSBaKSiocj5IvNikef_NIlAf0jk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015572188036-00ck13nt6qchjahrjje1n791dfji1onl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1015572188036-1s1k20m30tdppphqcs9aga72e67pdo1t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.firekart"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015572188036:android:64c823493a4c0d0776ebd1",
+        "android_client_info": {
+          "package_name": "com.groceryapp.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015572188036-00ck13nt6qchjahrjje1n791dfji1onl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLfq0AQSBaKSiocj5IvNikef_NIlAf0jk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015572188036-00ck13nt6qchjahrjje1n791dfji1onl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1015572188036-1s1k20m30tdppphqcs9aga72e67pdo1t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.firekart"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

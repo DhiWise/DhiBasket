@@ -1,15 +1,13 @@
-import 'package:grocery_app/data/models/items/post_items_req.dart';
-
-import 'controller/login_with_email_id_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grocery_app/core/app_export.dart';
 import 'package:grocery_app/core/utils/validation_functions.dart';
+import 'package:grocery_app/domain/firebaseFacebookAuth/firebaseFacebookAuth.dart';
+import 'package:grocery_app/domain/firebaseGoogleAuth/firebaseGoogleAuth.dart';
 import 'package:grocery_app/widgets/custom_button.dart';
 import 'package:grocery_app/widgets/custom_text_form_field.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:grocery_app/domain/firebaseGoogleAuth/firebaseGoogleAuth.dart';
-import 'package:grocery_app/domain/firebaseFacebookAuth/firebaseFacebookAuth.dart';
+
+import 'controller/login_with_email_id_controller.dart';
 
 class LoginWithEmailIdScreen extends GetWidget<LoginWithEmailIdController> {
   @override
