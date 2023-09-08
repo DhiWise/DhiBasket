@@ -1,9 +1,9 @@
 class ApiData {
   String token =
-      '5a1c580e280cceccf9c7e69e47a8830ca400cb50ba0157067a66456957b7c98f';
-  String CategoryCollectionId = '64f5cc751ec4b6735f04e0e6';
-  String ProductCollectionId = '64f5cc751ec4b6735f04e0e5';
-  String WishListCollectionId = '64f5ce9517f515e82de72eaa';
-  String UserCollectionId = '64f5ce8eaa4c958d826a0297';
-  String AddressCollectionId = '64f5ce5c32add1526b734632';
+      'b8843f49aa601d3b8a03ad5d408be0c7992ca7e4256048d64103bd645a6d12f5';
+  String CategoryCollectionId = '64fadee2012659b63ed7a6bd';
+  String ProductCollectionId = '64fadedb8f52e47a15ca2deb';
+  String WishListCollectionId = '64faded4aaadf64011f68c2d';
+  String UserCollectionId = '64fadecd8884cb2d68178090';
+  String AddressCollectionId = '64fadeaf46cfc2de8ff18133';
 }
