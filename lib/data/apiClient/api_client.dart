@@ -138,6 +138,8 @@ class ApiClient extends GetConnect {
       Response response = await httpClient.post(
           '/collections/${ApiData().UserCollectionId}/items',
           body: requestData);
+      print('CREATE USER RESPONSE $response');
+      print('CREATE USER BODY ${response.body}');
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
         onSuccess!(response.body);
