@@ -53,8 +53,8 @@ class Items {
   String? updatedBy;
   String? createdOn;
   String? createdBy;
-  String? publishedOn;
-  String? publishedBy;
+  Null publishedOn;
+  Null publishedBy;
   String? sCid;
   String? sId;
 

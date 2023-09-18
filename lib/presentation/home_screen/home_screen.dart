@@ -253,6 +253,8 @@ class HomeScreen extends GetWidget<HomeController> {
                                                                     .homeModelObj
                                                                     .value
                                                                     .frame9ItemList[index];
+                                                            print(
+                                                                ' this job hard $model');
                                                             return CategoryItemWidget(
                                                                 model);
                                                           })))),

@@ -16,6 +16,7 @@ class CategoryItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('this job hardwaaa ${frame9ItemModelObj.imageImg}');
     return Expanded(
       child: Align(
         alignment: Alignment.center,

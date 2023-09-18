@@ -39,7 +39,9 @@ class ApiClient extends GetConnect {
       await isNetworkConnected();
       Response response = await httpClient
           .get('/collections/${ApiData().CategoryCollectionId}/items');
+      print('response _ ${response.body}');
       ProgressDialogUtils.hideProgressDialog();
+
       if (_isSuccessCall(response)) {
         onSuccess!(response.body);
       } else {
@@ -138,8 +140,7 @@ class ApiClient extends GetConnect {
       Response response = await httpClient.post(
           '/collections/${ApiData().UserCollectionId}/items',
           body: requestData);
-      print('CREATE USER RESPONSE $response');
-      print('CREATE USER BODY ${response.body}');
+      print('response _ ${response.body}');
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
         onSuccess!(response.body);
