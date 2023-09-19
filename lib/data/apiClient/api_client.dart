@@ -31,33 +31,35 @@ class ApiClient extends GetConnect {
     }
   }
 
-  Future fetchCategories(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError}) async {
+  Future fetchCategories({
+    required Function(dynamic data) onSuccess,
+    required Function(dynamic error) onError,
+  }) async {
     ProgressDialogUtils.showProgressDialog();
     try {
       await isNetworkConnected();
       Response response = await httpClient
           .get('/collections/${ApiData().CategoryCollectionId}/items');
-      print('response _ ${response.body}');
       ProgressDialogUtils.hideProgressDialog();
 
       if (_isSuccessCall(response)) {
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
+      print('[--] ERROR: $error');
+
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 
   Future fetchProducts(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
+      {required Function(dynamic data) onSuccess,
+      required Function(dynamic error) onError,
       id}) async {
     ProgressDialogUtils.showProgressDialog();
     try {
@@ -71,21 +73,21 @@ class ApiClient extends GetConnect {
             .where((element) => element['categoryid'] == id.toString())
             .toList();
         response.body['items'] = items;
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 
   Future fetchProduct(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
+      {required Function(dynamic data) onSuccess,
+      required Function(dynamic error) onError,
       id}) async {
     ProgressDialogUtils.showProgressDialog();
     try {
@@ -94,21 +96,21 @@ class ApiClient extends GetConnect {
           '/collections/${ApiData().ProductCollectionId}/items/${id.value}');
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 
   Future createItems(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
+      {required Function(dynamic data) onSuccess,
+      required Function(dynamic error) onError,
       Map requestData = const {}}) async {
     ProgressDialogUtils.showProgressDialog();
     try {
@@ -118,21 +120,21 @@ class ApiClient extends GetConnect {
           body: requestData);
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 
   Future createUser(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
+      {required Function(dynamic data) onSuccess,
+      required Function(dynamic error) onError,
       Map requestData = const {}}) async {
     ProgressDialogUtils.showProgressDialog();
     try {
@@ -143,21 +145,21 @@ class ApiClient extends GetConnect {
       print('response _ ${response.body}');
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 
   Future fetchUser(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
+      {required Function(dynamic data) onSuccess,
+      required Function(dynamic error) onError,
       String? item_id = ''}) async {
     ProgressDialogUtils.showProgressDialog();
     try {
@@ -171,21 +173,21 @@ class ApiClient extends GetConnect {
             .where((element) => element['userid'] == item_id.toString())
             .toList();
         response.body['items'] = items;
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 
   Future createAddress(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
+      {required Function(dynamic data) onSuccess,
+      required Function(dynamic error) onError,
       Map requestData = const {}}) async {
     ProgressDialogUtils.showProgressDialog();
     try {
@@ -195,21 +197,21 @@ class ApiClient extends GetConnect {
           body: requestData);
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 
   Future fetchAddress(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
+      {required Function(dynamic data) onSuccess,
+      required Function(dynamic error) onError,
       Map requestData = const {}}) async {
     ProgressDialogUtils.showProgressDialog();
     try {
@@ -224,21 +226,21 @@ class ApiClient extends GetConnect {
                 element['userid'] == Get.find<PrefUtils>().getUserid())
             .toList();
         response.body['items'] = items;
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 
   Future fetchWishlist(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
+      {required Function(dynamic data) onSuccess,
+      required Function(dynamic error) onError,
       Map requestData = const {}}) async {
     ProgressDialogUtils.showProgressDialog();
     try {
@@ -253,15 +255,15 @@ class ApiClient extends GetConnect {
         //         element['userid'] == Get.find<PrefUtils>().getUserid())
         //     .toList();
         response.body['items'] = items;
-        onSuccess!(response.body);
+        onSuccess(response.body);
       } else {
-        onError!(
+        onError(
           response.hasError ? response.statusText : 'Something Went Wrong!',
         );
       }
     } catch (error) {
       ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
+      onError(error);
     }
   }
 }

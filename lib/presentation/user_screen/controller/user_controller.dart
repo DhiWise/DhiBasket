@@ -1,13 +1,14 @@
-import '/core/app_export.dart';
-import 'package:grocery_app/presentation/user_screen/models/user_model.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/data/models/ItemId/get_item_id_resp.dart';
 import 'package:grocery_app/data/apiClient/api_client.dart';
+import 'package:grocery_app/data/models/itemId/item_id_resp.dart';
+import 'package:grocery_app/presentation/user_screen/models/user_model.dart';
+
+import '/core/app_export.dart';
 
 class UserController extends GetxController {
   Rx<UserModel> userModelObj = UserModel().obs;
 
-  GetItemIdResp getItemIdResp = GetItemIdResp();
+  ItemID getItemIdResp = ItemID.empty();
 
   @override
   void onReady() {
@@ -49,7 +50,7 @@ class UserController extends GetxController {
   }
 
   void onFetchItemIdSuccess(var response) {
-    getItemIdResp = GetItemIdResp.fromJson(response);
+    getItemIdResp = ItemID.fromJson(response);
   }
 
   void onFetchItemIdError(var err) {
@@ -64,8 +65,8 @@ class UserController extends GetxController {
   }
 
   void _onFetchItemIdSuccess() {
-    if (getItemIdResp.items != null && getItemIdResp.items!.isNotEmpty) {
-      var i = getItemIdResp.items![0];
+    if (getItemIdResp.items.isNotEmpty) {
+      var i = getItemIdResp.items[0];
       userModelObj.value.name.value = i.name.toString();
       userModelObj.value.username.value = i.email.toString();
     }

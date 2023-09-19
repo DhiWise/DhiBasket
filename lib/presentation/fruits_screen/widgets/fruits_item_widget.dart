@@ -388,7 +388,7 @@ class FruitsItemWidget extends StatelessWidget {
   }
 
   void addToWishlist() {
-    PostItemsReq postItemsReq = PostItemsReq();
+    PostItemsReq postItemsReq = PostItemsReq.empty();
     controller.callCreateItems(postItemsReq.toJson(),
         successCall: _onCreateItemsSuccess, errCall: _onCreateItemsError);
   }

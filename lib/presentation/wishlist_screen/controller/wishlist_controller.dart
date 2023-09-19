@@ -1,19 +1,18 @@
-import 'package:grocery_app/routes/navigation_args.dart';
-
-import '/core/app_export.dart';
-import 'package:grocery_app/presentation/wishlist_screen/models/wishlist_model.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/data/models/items/post_items_resp.dart';
-import 'package:grocery_app/data/models/items/get_fruits_resp.dart';
 import 'package:grocery_app/data/apiClient/api_client.dart';
+import 'package:grocery_app/data/models/items/fruits_resp.dart';
+import 'package:grocery_app/data/models/items/post_items_resp.dart';
+import 'package:grocery_app/presentation/wishlist_screen/models/wishlist_model.dart';
+
 import '../models/wishlist_item_model.dart';
+import '/core/app_export.dart';
 
 class WishlistController extends GetxController with StateMixin<dynamic> {
   Rx<WishlistModel> wishlistModelObj = WishlistModel().obs;
 
-  GetFruitsResp getItemsResp = GetFruitsResp();
+  FruitsResp getItemsResp = FruitsResp.empty();
 
-  PostItemsResp postItemsResp = PostItemsResp();
+  PostItemsResp postItemsResp = PostItemsResp.empty();
 
   @override
   void onReady() {
@@ -45,7 +44,7 @@ class WishlistController extends GetxController with StateMixin<dynamic> {
   }
 
   void onFetchItemsSuccess(var response) {
-    getItemsResp = GetFruitsResp.fromJson(response);
+    getItemsResp = FruitsResp.fromJson(response);
   }
 
   void onFetchItemsError(var err) {
@@ -61,10 +60,10 @@ class WishlistController extends GetxController with StateMixin<dynamic> {
 
   void _onFetchItemsSuccess() {
     List<WishlistItemModel> wishlistItemModelList = [];
-    if (getItemsResp.items! != null && getItemsResp.items!.isNotEmpty) {
-      for (var element in getItemsResp.items!) {
+    if (getItemsResp.items.isNotEmpty) {
+      for (var element in getItemsResp.items) {
         var wishlistItemModel = WishlistItemModel();
-        wishlistItemModel.strawberryTxt.value = element.name!.toString();
+        wishlistItemModel.strawberryTxt.value = element.name.toString();
         // wishlistItemModel.priceTxt.value = element.price!.toString();
         // wishlistItemModel.imageImg.value = element.image!.url!.toString();
         // wishlistItemModel.k1kgTxt.value = element.weight!.toString();

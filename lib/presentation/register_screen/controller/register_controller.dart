@@ -1,8 +1,9 @@
-import '/core/app_export.dart';
-import 'package:grocery_app/data/apiClient/api_client.dart';
-import 'package:grocery_app/presentation/register_screen/models/register_model.dart';
-import 'package:grocery_app/data/models/items/post_items_resp.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery_app/data/apiClient/api_client.dart';
+import 'package:grocery_app/data/models/items/post_items_resp.dart';
+import 'package:grocery_app/presentation/register_screen/models/register_model.dart';
+
+import '/core/app_export.dart';
 
 class RegisterController extends GetxController {
   TextEditingController name = TextEditingController();
@@ -17,7 +18,7 @@ class RegisterController extends GetxController {
 
   Rx<RegisterModel> registerModelObj = RegisterModel().obs;
 
-  PostItemsResp postItemsResp = PostItemsResp();
+  PostItemsResp postItemsResp = PostItemsResp.empty();
 
   @override
   void onReady() {

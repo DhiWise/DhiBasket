@@ -1,12 +1,12 @@
-import 'package:grocery_app/data/models/items/get_fruits_resp.dart';
+import 'package:flutter/material.dart';
+import 'package:grocery_app/data/apiClient/api_client.dart';
+import 'package:grocery_app/data/models/items/fruits_resp.dart';
+import 'package:grocery_app/data/models/product/product_resp.dart';
 import 'package:grocery_app/presentation/details_screen/models/details_item_model.dart';
+import 'package:grocery_app/presentation/details_screen/models/details_model.dart';
 import 'package:grocery_app/routes/navigation_args.dart';
 
 import '/core/app_export.dart';
-import 'package:grocery_app/presentation/details_screen/models/details_model.dart';
-import 'package:flutter/material.dart';
-import 'package:grocery_app/data/models/product/get_product_resp.dart';
-import 'package:grocery_app/data/apiClient/api_client.dart';
 
 class DetailsController extends GetxController with StateMixin<dynamic> {
   var productId = Get.arguments[NavigationArgs.productId];
@@ -15,9 +15,9 @@ class DetailsController extends GetxController with StateMixin<dynamic> {
 
   Rx<DetailsModel> detailsModelObj = DetailsModel().obs;
 
-  ProductResp response = ProductResp();
+  ProductResp response = ProductResp.empty();
 
-  GetFruitsResp getItemsResp = GetFruitsResp();
+  FruitsResp getItemsResp = FruitsResp.empty();
 
   @override
   void onReady() {
@@ -71,10 +71,10 @@ class DetailsController extends GetxController with StateMixin<dynamic> {
   }
 
   void _onFetch62a06951446cb4e885cca1cbSuccess() {
-    if (response.items != null && response.items!.isNotEmpty) {
-      var i = response.items![0];
-      detailsModelObj.value.imageImg.value = i.image!.url.toString();
-      detailsModelObj.value.greenAppleTxt.value = i.name!.toString();
+    if (response.items.isNotEmpty) {
+      var i = response.items[0];
+      detailsModelObj.value.imageImg.value = i.image.url.toString();
+      detailsModelObj.value.greenAppleTxt.value = i.name.toString();
       detailsModelObj.value.priceTxt.value = i.price.toString();
       detailsModelObj.value.descriptionTxt.value = i.description.toString();
     }
@@ -101,7 +101,7 @@ class DetailsController extends GetxController with StateMixin<dynamic> {
   }
 
   void onFetchItemsSuccess(var response) {
-    getItemsResp = GetFruitsResp.fromJson(response);
+    getItemsResp = FruitsResp.fromJson(response);
   }
 
   void onFetchItemsError(var err) {
@@ -119,12 +119,12 @@ class DetailsController extends GetxController with StateMixin<dynamic> {
 
   void _onFetchItemsSuccess() {
     List<DetailsItemModel> detailsItemModelList = [];
-    if (getItemsResp.items! != null && getItemsResp.items!.isNotEmpty) {
-      for (var element in getItemsResp.items!) {
+    if (getItemsResp.items.isNotEmpty) {
+      for (var element in getItemsResp.items) {
         if (element.sId.toString() != productId.toString()) {
           var detailsItemModel = DetailsItemModel();
-          detailsItemModel.pinappleTxt.value = element.name!.toString();
-          detailsItemModel.imageImg.value = element.image!.url!.toString();
+          detailsItemModel.pinappleTxt.value = element.name.toString();
+          detailsItemModel.imageImg.value = element.image.url.toString();
           detailsItemModelList.add(detailsItemModel);
         }
       }

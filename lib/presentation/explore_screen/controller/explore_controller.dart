@@ -1,19 +1,18 @@
-import 'package:grocery_app/presentation/explore_screen/models/vegetables_item_model.dart';
-
-import '/core/app_export.dart';
-import 'package:grocery_app/presentation/explore_screen/models/explore_model.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/data/models/items/get_category_resp.dart';
 import 'package:grocery_app/data/apiClient/api_client.dart';
-import 'package:grocery_app/data/models/items/get_fruits_resp.dart';
+import 'package:grocery_app/data/models/items/category_resp.dart';
+import 'package:grocery_app/data/models/items/fruits_resp.dart';
+import 'package:grocery_app/presentation/explore_screen/models/explore_model.dart';
+
 import '../models/fruits_item_model.dart';
+import '/core/app_export.dart';
 
 class ExploreController extends GetxController with StateMixin<dynamic> {
   Rx<ExploreModel> exploreModelObj = ExploreModel().obs;
 
-  GetCategoryResp categoryResp = GetCategoryResp();
+  CategoryResp categoryResp = CategoryResp.empty();
 
-  GetFruitsResp productsResp = GetFruitsResp();
+  FruitsResp productsResp = FruitsResp.empty();
 
   @override
   void onReady() {
@@ -49,12 +48,12 @@ class ExploreController extends GetxController with StateMixin<dynamic> {
   }
 
   void onFetchCategorySuccess(var response) {
-    categoryResp = GetCategoryResp.fromJson(response);
+    categoryResp = CategoryResp.fromJson(response);
   }
 
   void _onFetchCategorySuccess() async {
     List<String> ids = [];
-    if (categoryResp.items!.isNotEmpty) {
+    if (categoryResp.items.isNotEmpty) {
       // for (var item in categoryResp.items!) {
       //   this.callFetchProducts(
       //       successCall: _onFetchProductSuccess,
@@ -65,7 +64,7 @@ class ExploreController extends GetxController with StateMixin<dynamic> {
       this.callFetchProducts(
           successCall: _onFetchProductSuccess,
           errCall: _onFetchProductError,
-          catIds: categoryResp.items![0].sId);
+          catIds: categoryResp.items[0].sId);
     }
   }
 
@@ -99,7 +98,7 @@ class ExploreController extends GetxController with StateMixin<dynamic> {
   }
 
   void onFetchProductSuccess(var response) {
-    productsResp = GetFruitsResp.fromJson(response);
+    productsResp = FruitsResp.fromJson(response);
   }
 
   void onFetchError(var err) {
@@ -115,14 +114,14 @@ class ExploreController extends GetxController with StateMixin<dynamic> {
 
   void _onFetchProductSuccess() {
     List<FruitsItemModel> frame3ItemModelList = [];
-    List<VegetablesItemModel> vegetables = [];
-    if (productsResp.items! != null && productsResp.items!.isNotEmpty) {
-      for (var element in productsResp.items!) {
+    // List<VegetablesItemModel> vegetables = [];
+    if (productsResp.items.isNotEmpty) {
+      for (var element in productsResp.items) {
         var frame3ItemModel = FruitsItemModel();
-        frame3ItemModel.priceTxt.value = element.price!.toString();
-        frame3ItemModel.nameTxt.value = element.name!.toString();
-        frame3ItemModel.imageImg.value = element.image!.url!.toString();
-        frame3ItemModel.weightTxt.value = element.weight!.toString();
+        frame3ItemModel.priceTxt.value = element.price.toString();
+        frame3ItemModel.nameTxt.value = element.name.toString();
+        frame3ItemModel.imageImg.value = element.image.url.toString();
+        frame3ItemModel.weightTxt.value = element.weight.toString();
         frame3ItemModelList.add(frame3ItemModel);
       }
     }

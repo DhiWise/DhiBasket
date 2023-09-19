@@ -1,11 +1,12 @@
-import 'controller/add_new_address_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
 import 'package:grocery_app/core/utils/validation_functions.dart';
+import 'package:grocery_app/data/models/items/post_items_req.dart';
 import 'package:grocery_app/widgets/custom_button.dart';
 import 'package:grocery_app/widgets/custom_checkbox.dart';
 import 'package:grocery_app/widgets/custom_text_form_field.dart';
-import 'package:grocery_app/data/models/items/post_items_req.dart';
+
+import 'controller/add_new_address_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class AddNewAddressScreen extends GetWidget<AddNewAddressController> {

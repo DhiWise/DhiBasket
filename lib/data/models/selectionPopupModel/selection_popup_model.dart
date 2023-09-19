@@ -1,15 +1,15 @@
 ///SelectionPopupModel is common model
 ///used for setting data into dropdowns
 class SelectionPopupModel {
-  int? id;
-  String title;
+  int id = 0;
+  String title = "";
   dynamic value;
-  bool isSelected;
+  bool isSelected = false;
 
   SelectionPopupModel({
-    this.id,
+    required this.id,
     required this.title,
     this.value,
-    this.isSelected = false,
+    required this.isSelected,
   });
 }

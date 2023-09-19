@@ -25,7 +25,7 @@ class AddNewAddressController extends GetxController {
 
   RxBool checkbox2 = false.obs;
 
-  PostItemsResp postItemsResp = PostItemsResp();
+  PostItemsResp postItemsResp = PostItemsResp.empty();
 
   @override
   void onReady() {

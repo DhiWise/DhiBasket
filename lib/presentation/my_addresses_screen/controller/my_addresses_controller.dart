@@ -1,14 +1,15 @@
-import '/core/app_export.dart';
-import 'package:grocery_app/presentation/my_addresses_screen/models/my_addresses_model.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/data/models/items/get_items_resp.dart';
 import 'package:grocery_app/data/apiClient/api_client.dart';
+import 'package:grocery_app/data/models/items/item_resp.dart';
+import 'package:grocery_app/presentation/my_addresses_screen/models/my_addresses_model.dart';
+
 import '../models/my_addresses_item_model.dart';
+import '/core/app_export.dart';
 
 class MyAddressesController extends GetxController {
   Rx<MyAddressesModel> myAddressesModelObj = MyAddressesModel().obs;
 
-  GetItemsResp getItemsResp = GetItemsResp();
+  ItemResp getItemsResp = ItemResp.empty();
 
   @override
   void onReady() {
@@ -44,7 +45,7 @@ class MyAddressesController extends GetxController {
   }
 
   void onFetchItemsSuccess(var response) {
-    getItemsResp = GetItemsResp.fromJson(response);
+    getItemsResp = ItemResp.fromJson(response);
   }
 
   void onFetchItemsError(var err) {
@@ -60,12 +61,12 @@ class MyAddressesController extends GetxController {
 
   void _onFetchItemsSuccess() {
     List<MyAddressesItemModel> myAddressesItemModelList = [];
-    if (getItemsResp.items!.isNotEmpty) {
-      for (var element in getItemsResp.items!) {
+    if (getItemsResp.items.isNotEmpty) {
+      for (var element in getItemsResp.items) {
         var myAddressesItemModel = MyAddressesItemModel();
-        myAddressesItemModel.homeTxt.value = element.name!.toString();
+        myAddressesItemModel.homeTxt.value = element.name.toString();
         String address =
-            "${element.area!.toString()}, ${element.city!.toString()}, ${element.state!.toString()}, ${element.landmark!.toString()}, ${element.pincode!.toString()}";
+            "${element.area.toString()}, ${element.city.toString()}, ${element.state.toString()}, ${element.landmark.toString()}, ${element.pincode.toString()}";
         myAddressesItemModel.k4517WashingtonTxt.value = address;
         myAddressesItemModelList.add(myAddressesItemModel);
       }
