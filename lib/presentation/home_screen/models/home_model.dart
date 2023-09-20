@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import 'category_item_model.dart';
 import 'frame10_item_model.dart';
 import 'frame13_item_model.dart';
@@ -8,8 +9,8 @@ class HomeModel {
   RxList<CategoryItemModel> frame9ItemList =
       RxList.filled(4, CategoryItemModel());
 
-  RxList<Frame10ItemModel> frame10ItemList =
-      RxList.filled(3, Frame10ItemModel());
+  RxList<ProductItemModel> frame10ItemList =
+      RxList.filled(3, ProductItemModel());
 
   RxList<Frame13ItemModel> frame13ItemList =
       RxList.filled(3, Frame13ItemModel());

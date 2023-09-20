@@ -6,9 +6,8 @@ import 'package:grocery_app/presentation/home_screen/components/top_categories.d
 import 'package:grocery_app/widgets/custom_bottom_navbar.dart';
 
 import 'components/top_products.dart';
-import 'controller/home_controller.dart';
 
-class HomeScreen extends GetWidget<HomeController> {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

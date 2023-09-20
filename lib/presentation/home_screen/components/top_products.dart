@@ -56,9 +56,9 @@ class TopProducts extends GetWidget<HomeController> {
                     itemCount:
                         controller.homeModelObj.value.frame10ItemList.length,
                     itemBuilder: (context, index) {
-                      Frame10ItemModel model =
+                      ProductItemModel model =
                           controller.homeModelObj.value.frame10ItemList[index];
-                      return Frame10ItemWidget(model);
+                      return ProductItemWidget(model);
                     })))),
       ],
     );

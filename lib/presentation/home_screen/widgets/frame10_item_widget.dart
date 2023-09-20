@@ -1,16 +1,17 @@
-import '../controller/home_controller.dart';
-import '../models/frame10_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grocery_app/core/app_export.dart';
 
+import '../controller/home_controller.dart';
+import '../models/frame10_item_model.dart';
+
 // ignore: must_be_immutable
-class Frame10ItemWidget extends StatelessWidget {
-  Frame10ItemWidget(this.frame10ItemModelObj);
+class ProductItemWidget extends GetWidget<HomeController> {
+  ProductItemWidget(this.frame10ItemModelObj);
 
-  Frame10ItemModel frame10ItemModelObj;
+  ProductItemModel frame10ItemModelObj;
 
-  var controller = Get.find<HomeController>();
+  // var controller = Get.find<HomeController>();
 
   @override
   Widget build(BuildContext context) {
@@ -18,24 +19,12 @@ class Frame10ItemWidget extends StatelessWidget {
       child: Align(
         alignment: Alignment.center,
         child: Container(
-          height: getVerticalSize(
-            192.00,
-          ),
-          width: getHorizontalSize(
-            162.06,
-          ),
-          margin: EdgeInsets.only(
-            right: getHorizontalSize(
-              16.94,
-            ),
-          ),
+          height: getVerticalSize(192.00),
+          width: getHorizontalSize(162.06),
+          margin: EdgeInsets.only(right: getHorizontalSize(16.94)),
           decoration: BoxDecoration(
             color: ColorConstant.gray102,
-            borderRadius: BorderRadius.circular(
-              getHorizontalSize(
-                10.00,
-              ),
-            ),
+            borderRadius: BorderRadius.circular(getHorizontalSize(10.00)),
           ),
           child: Card(
             clipBehavior: Clip.antiAlias,
@@ -43,11 +32,7 @@ class Frame10ItemWidget extends StatelessWidget {
             margin: EdgeInsets.all(0),
             color: ColorConstant.gray102,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  10.00,
-                ),
-              ),
+              borderRadius: BorderRadius.circular(getHorizontalSize(10.00)),
             ),
             child: Stack(
               alignment: Alignment.topLeft,
@@ -55,22 +40,12 @@ class Frame10ItemWidget extends StatelessWidget {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Container(
-                    height: getVerticalSize(
-                      162.22,
-                    ),
-                    width: getHorizontalSize(
-                      129.87,
-                    ),
+                    height: getVerticalSize(162.22),
+                    width: getHorizontalSize(129.87),
                     margin: EdgeInsets.only(
-                      top: getVerticalSize(
-                        11.00,
-                      ),
-                      right: getHorizontalSize(
-                        10.00,
-                      ),
-                      bottom: getVerticalSize(
-                        11.00,
-                      ),
+                      top: getVerticalSize(11.00),
+                      right: getHorizontalSize(10.00),
+                      bottom: getVerticalSize(11.00),
                     ),
                     child: Stack(
                       alignment: Alignment.topLeft,
@@ -117,13 +92,8 @@ class Frame10ItemWidget extends StatelessWidget {
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: EdgeInsets.only(
-                                      top: getVerticalSize(
-                                        8.17,
-                                      ),
-                                      bottom: getVerticalSize(
-                                        0.01,
-                                      ),
-                                    ),
+                                        top: getVerticalSize(8.17),
+                                        bottom: getVerticalSize(0.01)),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       crossAxisAlignment:

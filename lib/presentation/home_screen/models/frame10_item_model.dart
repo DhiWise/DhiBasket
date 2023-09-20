@@ -1,1 +1,1 @@
-class Frame10ItemModel {}
+class ProductItemModel {}
