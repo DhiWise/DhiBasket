@@ -19,36 +19,21 @@ class CustomDropDown extends StatelessWidget {
       this.onChanged,
       this.validator});
 
-  DropDownShape? shape;
-
-  DropDownPadding? padding;
-
-  DropDownVariant? variant;
-
-  DropDownFontStyle? fontStyle;
-
-  Alignment? alignment;
-
-  double? width;
-
-  EdgeInsetsGeometry? margin;
-
-  FocusNode? focusNode;
-
-  Widget? icon;
-
-  String? hintText;
-
-  Widget? prefix;
-
-  BoxConstraints? prefixConstraints;
-
-  List<SelectionPopupModel>? items;
-
-  Function(SelectionPopupModel)? onChanged;
-
-  FormFieldValidator<SelectionPopupModel>? validator;
-
+  final DropDownShape? shape;
+  final DropDownPadding? padding;
+  final DropDownVariant? variant;
+  final DropDownFontStyle? fontStyle;
+  final Alignment? alignment;
+  final double? width;
+  final EdgeInsetsGeometry? margin;
+  final FocusNode? focusNode;
+  final Widget? icon;
+  final String? hintText;
+  final Widget? prefix;
+  final BoxConstraints? prefixConstraints;
+  final List<SelectionPopupModel>? items;
+  final Function(SelectionPopupModel)? onChanged;
+  final FormFieldValidator<SelectionPopupModel>? validator;
   @override
   Widget build(BuildContext context) {
     return alignment != null

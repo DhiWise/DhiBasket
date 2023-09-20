@@ -1,40 +1,36 @@
-import 'package:grocery_app/presentation/add_new_address_screen/add_new_address_screen.dart';
-import 'package:grocery_app/presentation/add_new_address_screen/binding/add_new_address_binding.dart';
-import 'package:grocery_app/presentation/details_screen/details_screen.dart';
-import 'package:grocery_app/presentation/details_screen/binding/details_binding.dart';
-import 'package:grocery_app/presentation/explore_screen/explore_screen.dart';
-import 'package:grocery_app/presentation/explore_screen/binding/explore_binding.dart';
-import 'package:grocery_app/presentation/home_screen/home_screen.dart';
-import 'package:grocery_app/presentation/home_screen/binding/home_binding.dart';
-import 'package:grocery_app/presentation/login_with_email_id_screen/login_with_email_id_screen.dart';
-import 'package:grocery_app/presentation/login_with_email_id_screen/binding/login_with_email_id_binding.dart';
-import 'package:grocery_app/presentation/register_screen/register_screen.dart';
-import 'package:grocery_app/presentation/register_screen/binding/register_binding.dart';
-import 'package:grocery_app/presentation/fruits_screen/fruits_screen.dart';
-import 'package:grocery_app/presentation/fruits_screen/binding/fruits_binding.dart';
-import 'package:grocery_app/presentation/wishlist_screen/wishlist_screen.dart';
-import 'package:grocery_app/presentation/wishlist_screen/binding/wishlist_bindings.dart';
-import 'package:grocery_app/presentation/my_addresses_screen/my_addresses_screen.dart';
-import 'package:grocery_app/presentation/my_addresses_screen/binding/my_addresses_binding.dart';
-import 'package:grocery_app/presentation/my_orders_screen/my_orders_screen.dart';
-import 'package:grocery_app/presentation/my_orders_screen/binding/my_orders_binding.dart';
-import 'package:grocery_app/presentation/contact_us_screen/contact_us_screen.dart';
-import 'package:grocery_app/presentation/contact_us_screen/binding/contact_us_binding.dart';
-import 'package:grocery_app/presentation/privacy_policy_screen/privacy_policy_screen.dart';
-import 'package:grocery_app/presentation/privacy_policy_screen/binding/privacy_policy_binding.dart';
-import 'package:grocery_app/presentation/my_cart_screen/my_cart_screen.dart';
-import 'package:grocery_app/presentation/my_cart_screen/binding/my_cart_binding.dart';
-import 'package:grocery_app/presentation/user_screen/user_screen.dart';
-import 'package:grocery_app/presentation/user_screen/binding/user_binding.dart';
-import 'package:grocery_app/presentation/splash_screen/splash_screen.dart';
-import 'package:grocery_app/presentation/splash_screen/binding/splash_binding.dart';
-import 'package:grocery_app/presentation/terms_of_services_screen/terms_of_services_screen.dart';
-import 'package:grocery_app/presentation/terms_of_services_screen/binding/terms_of_services_binding.dart';
+import 'package:get/get.dart';
 import 'package:grocery_app/presentation/about_us_screen/about_us_screen.dart';
 import 'package:grocery_app/presentation/about_us_screen/binding/about_us_binding.dart';
+import 'package:grocery_app/presentation/add_new_address_screen/add_new_address_screen.dart';
+import 'package:grocery_app/presentation/add_new_address_screen/binding/add_new_address_binding.dart';
 import 'package:grocery_app/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:grocery_app/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
-import 'package:get/get.dart';
+import 'package:grocery_app/presentation/contact_us_screen/binding/contact_us_binding.dart';
+import 'package:grocery_app/presentation/contact_us_screen/contact_us_screen.dart';
+import 'package:grocery_app/presentation/details_screen/binding/details_binding.dart';
+import 'package:grocery_app/presentation/details_screen/details_screen.dart';
+import 'package:grocery_app/presentation/explore_screen/binding/explore_binding.dart';
+import 'package:grocery_app/presentation/explore_screen/explore_screen.dart';
+import 'package:grocery_app/presentation/fruits_screen/binding/fruits_binding.dart';
+import 'package:grocery_app/presentation/fruits_screen/fruits_screen.dart';
+import 'package:grocery_app/presentation/home_screen/binding/home_binding.dart';
+import 'package:grocery_app/presentation/home_screen/home_screen.dart';
+import 'package:grocery_app/presentation/login_with_email_id_screen/binding/login_with_email_id_binding.dart';
+import 'package:grocery_app/presentation/login_with_email_id_screen/login_with_email_id_screen.dart';
+import 'package:grocery_app/presentation/my_addresses_screen/binding/my_addresses_binding.dart';
+import 'package:grocery_app/presentation/my_addresses_screen/my_addresses_screen.dart';
+import 'package:grocery_app/presentation/privacy_policy_screen/binding/privacy_policy_binding.dart';
+import 'package:grocery_app/presentation/privacy_policy_screen/privacy_policy_screen.dart';
+import 'package:grocery_app/presentation/register_screen/binding/register_binding.dart';
+import 'package:grocery_app/presentation/register_screen/register_screen.dart';
+import 'package:grocery_app/presentation/splash_screen/binding/splash_binding.dart';
+import 'package:grocery_app/presentation/splash_screen/splash_screen.dart';
+import 'package:grocery_app/presentation/terms_of_services_screen/binding/terms_of_services_binding.dart';
+import 'package:grocery_app/presentation/terms_of_services_screen/terms_of_services_screen.dart';
+import 'package:grocery_app/presentation/user_screen/binding/user_binding.dart';
+import 'package:grocery_app/presentation/user_screen/user_screen.dart';
+import 'package:grocery_app/presentation/wishlist_screen/binding/wishlist_bindings.dart';
+import 'package:grocery_app/presentation/wishlist_screen/wishlist_screen.dart';
 
 class AppRoutes {
   static String detailsScreen = '/details_screen';
@@ -53,13 +49,9 @@ class AppRoutes {
 
   static String myAddressesScreen = '/my_addresses_screen';
 
-  static String myOrdersScreen = '/my_orders_screen';
-
   static String contactUsScreen = '/contact_us_screen';
 
   static String privacyPolicyScreen = '/privacy_policy_screen';
-
-  static String myCartScreen = '/my_cart_screen';
 
   static String userScreen = '/user_screen';
 
@@ -135,13 +127,6 @@ class AppRoutes {
       ],
     ),
     GetPage(
-      name: myOrdersScreen,
-      page: () => MyOrdersScreen(),
-      bindings: [
-        MyOrdersBinding(),
-      ],
-    ),
-    GetPage(
       name: contactUsScreen,
       page: () => ContactUsScreen(),
       bindings: [
@@ -153,13 +138,6 @@ class AppRoutes {
       page: () => PrivacyPolicyScreen(),
       bindings: [
         PrivacyPolicyBinding(),
-      ],
-    ),
-    GetPage(
-      name: myCartScreen,
-      page: () => MyCartScreen(),
-      bindings: [
-        MyCartBinding(),
       ],
     ),
     GetPage(

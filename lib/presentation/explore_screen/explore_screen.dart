@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:grocery_app/core/app_export.dart';
+
 import '../explore_screen/widgets/fruits_item_widget.dart';
 import 'controller/explore_controller.dart';
 import 'models/fruits_item_model.dart';
-import 'package:flutter/material.dart';
-import 'package:grocery_app/core/app_export.dart';
 
 class ExploreScreen extends GetWidget<ExploreController> {
   @override
@@ -290,7 +291,7 @@ class ExploreScreen extends GetWidget<ExploreController> {
   }
 
   onTapImgClock() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapImgClockOne() {

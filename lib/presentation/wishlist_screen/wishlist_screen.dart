@@ -1,9 +1,10 @@
-import '../wishlist_screen/widgets/wishlist_item_widget.dart';
-import 'controller/wishlist_controller.dart';
-import 'models/wishlist_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grocery_app/core/app_export.dart';
+
+import '../wishlist_screen/widgets/wishlist_item_widget.dart';
+import 'controller/wishlist_controller.dart';
+import 'models/wishlist_item_model.dart';
 
 class WishlistScreen extends GetWidget<WishlistController> {
   @override
@@ -328,7 +329,7 @@ class WishlistScreen extends GetWidget<WishlistController> {
   }
 
   onTapBtnCart2() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapBtnWishlist2() {

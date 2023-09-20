@@ -32,14 +32,6 @@ class BottomNavBar extends StatelessWidget {
                               height: getVerticalSize(23.00),
                               width: getHorizontalSize(24.00)))),
                   GestureDetector(
-                      onTap: () => Get.toNamed(AppRoutes.myCartScreen),
-                      child: Padding(
-                          padding: getPadding(bottom: 1),
-                          child: CommonImageView(
-                              svgPath: ImageConstant.imgClock,
-                              height: getVerticalSize(23.00),
-                              width: getHorizontalSize(21.00)))),
-                  GestureDetector(
                     onTap: () => Get.toNamed(AppRoutes.wishlistScreen),
                     child: Padding(
                         padding: getPadding(top: 1, bottom: 1),

@@ -1,6 +1,7 @@
-import 'controller/app_navigation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
+
+import 'controller/app_navigation_controller.dart';
 
 class AppNavigationScreen extends GetWidget<AppNavigationController> {
   @override
@@ -857,7 +858,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   }
 
   onTapMyorders() {
-    Get.toNamed(AppRoutes.myOrdersScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapContactUs() {
@@ -869,7 +870,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   }
 
   onTapMyCart() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapUser() {

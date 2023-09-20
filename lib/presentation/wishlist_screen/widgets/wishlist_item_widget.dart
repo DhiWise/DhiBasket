@@ -1,11 +1,10 @@
-import 'package:grocery_app/data/models/items/post_items_req.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grocery_app/core/app_export.dart';
 import 'package:grocery_app/routes/navigation_args.dart';
 
 import '../controller/wishlist_controller.dart';
 import '../models/wishlist_item_model.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:grocery_app/core/app_export.dart';
 
 // ignore: must_be_immutable
 class FruitsItemWidget extends StatelessWidget {

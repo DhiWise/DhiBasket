@@ -308,7 +308,7 @@ class AboutUsScreen extends GetWidget<AboutUsController> {
   }
 
   onTapImgClock() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapImgClockOne() {

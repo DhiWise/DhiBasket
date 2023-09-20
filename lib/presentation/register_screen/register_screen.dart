@@ -1,13 +1,14 @@
-import 'controller/register_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
 import 'package:grocery_app/core/utils/validation_functions.dart';
+import 'package:grocery_app/data/models/items/post_items_req.dart';
+import 'package:grocery_app/domain/firebaseFacebookAuth/firebaseFacebookAuth.dart';
+import 'package:grocery_app/domain/firebaseGoogleAuth/firebaseGoogleAuth.dart';
 import 'package:grocery_app/widgets/custom_button.dart';
 import 'package:grocery_app/widgets/custom_text_form_field.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:grocery_app/domain/firebaseGoogleAuth/firebaseGoogleAuth.dart';
-import 'package:grocery_app/domain/firebaseFacebookAuth/firebaseFacebookAuth.dart';
-import 'package:grocery_app/data/models/items/post_items_req.dart';
+
+import 'controller/register_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class RegisterScreen extends GetWidget<RegisterController> {
@@ -554,7 +555,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
   }
 
   void _onCreateUsersSuccess() {
-    Get.find<PrefUtils>().setUserid(controller.postItemsResp.userid!);
+    Get.find<PrefUtils>().setUserid(controller.postItemsResp.userid);
     Get.offNamed(AppRoutes.homeScreen);
   }
 

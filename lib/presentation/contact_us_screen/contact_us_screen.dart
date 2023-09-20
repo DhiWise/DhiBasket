@@ -1,9 +1,10 @@
-import 'controller/contact_us_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
 import 'package:grocery_app/core/utils/validation_functions.dart';
 import 'package:grocery_app/widgets/custom_button.dart';
 import 'package:grocery_app/widgets/custom_text_form_field.dart';
+
+import 'controller/contact_us_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class ContactUsScreen extends GetWidget<ContactUsController> {
@@ -635,7 +636,7 @@ class ContactUsScreen extends GetWidget<ContactUsController> {
   }
 
   onTapImgClock() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapImgClockOne() {

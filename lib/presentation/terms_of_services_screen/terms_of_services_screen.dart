@@ -1,6 +1,7 @@
-import 'controller/terms_of_services_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
+
+import 'controller/terms_of_services_controller.dart';
 
 class TermsOfServicesScreen extends GetWidget<TermsOfServicesController> {
   @override
@@ -352,7 +353,7 @@ class TermsOfServicesScreen extends GetWidget<TermsOfServicesController> {
   }
 
   onTapImgClock() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapImgClockOne() {

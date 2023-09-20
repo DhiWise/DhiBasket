@@ -1,7 +1,8 @@
-import 'controller/user_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
+import 'controller/user_controller.dart';
 
 class UserScreen extends GetWidget<UserController> {
   @override
@@ -305,7 +306,7 @@ class UserScreen extends GetWidget<UserController> {
   }
 
   goToOrders() {
-    Get.toNamed(AppRoutes.myOrdersScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   gotoAddresses() {
@@ -332,7 +333,7 @@ class UserScreen extends GetWidget<UserController> {
   }
 
   onTapBtnCart2() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapBtnProfile2() {

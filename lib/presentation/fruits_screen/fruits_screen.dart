@@ -1,11 +1,10 @@
-import 'package:grocery_app/data/models/items/post_items_req.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grocery_app/core/app_export.dart';
 
 import '../fruits_screen/widgets/fruits_item_widget.dart';
 import 'controller/fruits_controller.dart';
 import 'models/fruits_item_model.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:grocery_app/core/app_export.dart';
 
 class FruitsScreen extends GetWidget<FruitsController> {
   @override
@@ -331,7 +330,7 @@ class FruitsScreen extends GetWidget<FruitsController> {
   }
 
   onTapBtnCart2() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapBtnWishlist2() {

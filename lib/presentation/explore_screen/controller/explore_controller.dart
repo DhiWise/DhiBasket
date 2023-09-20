@@ -53,7 +53,6 @@ class ExploreController extends GetxController with StateMixin<dynamic> {
   }
 
   void _onFetchCategorySuccess() async {
-    List<String> ids = [];
     if (categoryResp.items.isNotEmpty) {
       for (var item in categoryResp.items) {
         this.callFetchProducts(

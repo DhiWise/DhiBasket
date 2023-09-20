@@ -130,11 +130,9 @@ class Image {
   });
 
   Image.fromJson(Map<String, dynamic> json) {
-    if (json != null) {
-      fileId = json['fileId'] ?? ' ';
-      url = json['url'] ?? ' ';
-      alt = json['alt'] ?? ' ';
-    }
+    fileId = json['fileId'] ?? ' ';
+    url = json['url'] ?? ' ';
+    alt = json['alt'] ?? ' ';
   }
 
   Map<String, dynamic> toJson() {

@@ -1,9 +1,10 @@
-import '../my_addresses_screen/widgets/my_addresses_item_widget.dart';
-import 'controller/my_addresses_controller.dart';
-import 'models/my_addresses_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
 import 'package:grocery_app/widgets/custom_icon_button.dart';
+
+import '../my_addresses_screen/widgets/my_addresses_item_widget.dart';
+import 'controller/my_addresses_controller.dart';
+import 'models/my_addresses_item_model.dart';
 
 class MyAddressesScreen extends GetWidget<MyAddressesController> {
   @override
@@ -227,7 +228,7 @@ class MyAddressesScreen extends GetWidget<MyAddressesController> {
   }
 
   onTapImgClock() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapImgClockOne() {

@@ -1,6 +1,7 @@
-import 'controller/privacy_policy_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
+
+import 'controller/privacy_policy_controller.dart';
 
 class PrivacyPolicyScreen extends GetWidget<PrivacyPolicyController> {
   @override
@@ -263,7 +264,7 @@ class PrivacyPolicyScreen extends GetWidget<PrivacyPolicyController> {
   }
 
   onTapImgClock() {
-    Get.toNamed(AppRoutes.myCartScreen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapImgClockOne() {

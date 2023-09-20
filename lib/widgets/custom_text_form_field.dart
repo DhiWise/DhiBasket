@@ -2,57 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/core/app_export.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField(
-      {this.shape,
-      this.padding,
-      this.variant,
-      this.fontStyle,
-      this.alignment,
-      this.width,
-      this.margin,
-      this.controller,
-      this.focusNode,
-      this.isObscureText = false,
-      this.textInputAction = TextInputAction.next,
-      this.hintText,
-      this.prefix,
-      this.prefixConstraints,
-      this.suffix,
-      this.suffixConstraints,
-      this.validator});
+  CustomTextFormField({
+    required this.shape,
+    required this.padding,
+    required this.variant,
+    required this.fontStyle,
+    required this.alignment,
+    required this.width,
+    required this.margin,
+    required this.controller,
+    required this.focusNode,
+    this.isObscureText = false,
+    this.textInputAction = TextInputAction.next,
+    required this.hintText,
+    required this.prefix,
+    required this.prefixConstraints,
+    required this.suffix,
+    required this.suffixConstraints,
+    required this.validator,
+  });
 
   TextFormFieldShape? shape;
-
   TextFormFieldPadding? padding;
-
   TextFormFieldVariant? variant;
-
   TextFormFieldFontStyle? fontStyle;
-
   Alignment? alignment;
-
   double? width;
-
   EdgeInsetsGeometry? margin;
-
   TextEditingController? controller;
-
   FocusNode? focusNode;
-
   bool? isObscureText;
-
   TextInputAction? textInputAction;
-
   String? hintText;
-
   Widget? prefix;
-
   BoxConstraints? prefixConstraints;
-
   Widget? suffix;
-
   BoxConstraints? suffixConstraints;
-
   FormFieldValidator<String>? validator;
 
   @override

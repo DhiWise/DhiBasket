@@ -13,22 +13,14 @@ class CustomCheckbox extends StatelessWidget {
       this.onChange,
       this.text});
 
-  CheckboxShape? shape;
-
-  CheckboxVariant? variant;
-
-  CheckboxFontStyle? fontStyle;
-
-  Alignment? alignment;
-
-  EdgeInsetsGeometry? padding;
-
-  double? iconSize;
-
+  final CheckboxShape? shape;
+  final CheckboxVariant? variant;
+  final CheckboxFontStyle? fontStyle;
+  final Alignment? alignment;
+  final EdgeInsetsGeometry? padding;
+  final double? iconSize;
   bool? value;
-
   Function(bool)? onChange;
-
   String? text;
 
   @override
