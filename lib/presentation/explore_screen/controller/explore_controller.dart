@@ -49,22 +49,24 @@ class ExploreController extends GetxController with StateMixin<dynamic> {
 
   void onFetchCategorySuccess(var response) {
     categoryResp = CategoryResp.fromJson(response);
+    print('[+] Category Resp: ${categoryResp.toJson()}');
   }
 
   void _onFetchCategorySuccess() async {
     List<String> ids = [];
     if (categoryResp.items.isNotEmpty) {
-      // for (var item in categoryResp.items!) {
-      //   this.callFetchProducts(
-      //       successCall: _onFetchProductSuccess,
-      //       errCall: _onFetchProductError,
-      //       catIds: item.sId);
-      // }
+      for (var item in categoryResp.items) {
+        this.callFetchProducts(
+            successCall: _onFetchProductSuccess,
+            errCall: _onFetchProductError,
+            catIds: item.sId);
+      }
 
-      this.callFetchProducts(
-          successCall: _onFetchProductSuccess,
-          errCall: _onFetchProductError,
-          catIds: categoryResp.items[0].sId);
+      // this.callFetchProducts(
+      //   successCall: _onFetchProductSuccess,
+      //   errCall: _onFetchProductError,
+      //   catIds: categoryResp.items[0].sId,
+      // );
     }
   }
 

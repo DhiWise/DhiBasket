@@ -18,6 +18,7 @@ class CategoryResp {
   CategoryResp.fromJson(Map<String, dynamic> json) {
     if (json['items'] != null) {
       json['items'].forEach((v) {
+        print('[+] Explorer: ${v['name']}');
         if (v != null) items.add(CategoryItems.fromJson(v));
       });
     }

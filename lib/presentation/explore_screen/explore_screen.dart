@@ -29,9 +29,7 @@ class ExploreScreen extends GetWidget<ExploreController> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       GestureDetector(
-                                          onTap: () {
-                                            onTapImgForward();
-                                          },
+                                          onTap: onTapImgForward,
                                           child: Padding(
                                               padding: getPadding(bottom: 1),
                                               child: CommonImageView(
