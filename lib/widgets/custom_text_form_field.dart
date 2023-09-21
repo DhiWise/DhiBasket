@@ -3,23 +3,23 @@ import 'package:grocery_app/core/app_export.dart';
 
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
-    required this.shape,
-    required this.padding,
-    required this.variant,
-    required this.fontStyle,
-    required this.alignment,
-    required this.width,
-    required this.margin,
-    required this.controller,
-    required this.focusNode,
+    this.shape,
+    this.padding,
+    this.variant,
+    this.fontStyle,
+    this.alignment,
+    this.width,
+    this.margin,
+    this.controller,
+    this.focusNode,
     this.isObscureText = false,
     this.textInputAction = TextInputAction.next,
-    required this.hintText,
-    required this.prefix,
-    required this.prefixConstraints,
-    required this.suffix,
-    required this.suffixConstraints,
-    required this.validator,
+    this.hintText,
+    this.prefix,
+    this.prefixConstraints,
+    this.suffix,
+    this.suffixConstraints,
+    this.validator,
   });
 
   TextFormFieldShape? shape;

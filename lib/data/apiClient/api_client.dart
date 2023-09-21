@@ -50,8 +50,6 @@ class ApiClient extends GetConnect {
         );
       }
     } catch (error) {
-      print('[--] ERROR: $error');
-
       ProgressDialogUtils.hideProgressDialog();
       onError(error);
     }
@@ -142,7 +140,6 @@ class ApiClient extends GetConnect {
       Response response = await httpClient.post(
           '/collections/${ApiData().UserCollectionId}/items',
           body: requestData);
-      print('response _ ${response.body}');
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
         onSuccess(response.body);
